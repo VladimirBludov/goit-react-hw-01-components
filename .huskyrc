@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "npx lint-staged && npm run prod"
+    "pre-commit": "npx lint-staged && npm run deploy"
   }
 }
