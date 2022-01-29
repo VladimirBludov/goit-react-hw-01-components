@@ -1,13 +1,6 @@
 import PropTypes from 'prop-types';
 import defaultImage from './default_512x512.jpg';
-import {
-  Container,
-  Description,
-  Avatar,
-  Name,
-  Tag,
-} from './Profile.styled.jsx';
-
+import './Profile.module.scss';
 function Profile({
   username,
   tag,
@@ -18,29 +11,29 @@ function Profile({
   likes = 0,
 }) {
   return (
-    <Container>
-      <Description>
-        <Avatar src={avatar} alt="Аватар пользователя" />
-        <Name>{username}</Name>
-        <Tag className="tag">@{tag}</Tag>
-        <p>{location}</p>
-      </Description>
+    <div class="profile">
+      <div class="description">
+        <img src={avatar} alt="User avatar" class="avatar" />
+        <p class="name">{username}</p>
+        <p class="tag">@{tag}</p>
+        <p class="location">{location}</p>
+      </div>
 
-      <ul className="stats">
+      <ul class="stats">
         <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
+          <span class="label">Followers</span>
+          <span class="quantity">{followers}</span>
         </li>
         <li>
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
+          <span class="label">Views</span>
+          <span class="quantity">{views}</span>
         </li>
         <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
+          <span class="label">Likes</span>
+          <span class="quantity">{likes}</span>
         </li>
       </ul>
-    </Container>
+    </div>
   );
 }
 
