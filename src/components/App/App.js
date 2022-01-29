@@ -1,18 +1,16 @@
-import { GlobalStyle } from './GlobalStyle';
-import user from '../Profile/user';
-import Profile from '../Profile/Profile';
-import Statistic from '../Statistics/Statistics';
-import statisticalData from '../Statistics/data';
-import FriendList from '../FriendList/FriendList';
-import friends from '../FriendList/friends';
-import TransactionHistory from '../TransactionHistory/TransactionHistory';
-import transactions from '../TransactionHistory/transactions';
+import Container from '../Container';
+import Profile from '../Profile';
+import Statistic from '../Statistics';
+import FriendList from '../FriendList';
+import TransactionHistory from '../TransactionHistory';
+import user from './user';
+import statisticalData from './data';
+import friends from './friends';
+import transactions from './transactions';
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyle />
-
+    <Container>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -30,7 +28,7 @@ function App() {
       <FriendList friends={friends} />
 
       <TransactionHistory items={transactions} />
-    </div>
+    </Container>
   );
 }
 

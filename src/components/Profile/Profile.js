@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import defaultImage from './default_512x512.jpg';
-import './Profile.module.scss';
+import s from './Profile.module.css';
+
 function Profile({
   username,
   tag,
@@ -11,26 +12,26 @@ function Profile({
   likes = 0,
 }) {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+    <div className={s.profile}>
+      <div className={s.description}>
+        <img className={s.avatar} src={avatar} alt="User avatar" />
+        <p className={s.name}>{username}</p>
+        <p className={s.tag}>@{tag}</p>
+        <p>{location}</p>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
+      <ul className={s.stats}>
+        <li className={s.statsItem}>
+          <span className={s.label}>Followers</span>
+          <span className={s.quantity}>{followers}</span>
         </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
+        <li className={s.statsItem}>
+          <span className={s.label}>Views</span>
+          <span className={s.quantity}>{views}</span>
         </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
+        <li className={s.statsItem}>
+          <span className={s.label}>Likes</span>
+          <span className={s.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
