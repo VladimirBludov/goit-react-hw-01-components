@@ -7,9 +7,7 @@ function Profile({
   tag,
   location,
   avatar = defaultImage,
-  followers = 0,
-  views = 0,
-  likes = 0,
+  stats: { followers = 0, views = 0, likes = 0 },
 }) {
   return (
     <div className={s.profile}>
@@ -43,9 +41,11 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  stats: PropTypes.shape({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
 };
 
 export default Profile;

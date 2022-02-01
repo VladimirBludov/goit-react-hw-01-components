@@ -3,10 +3,10 @@ import Profile from '../Profile';
 import Statistic from '../Statistics';
 import FriendList from '../FriendList';
 import TransactionHistory from '../TransactionHistory';
-import user from './user';
-import statisticalData from './data';
-import friends from './friends';
-import transactions from './transactions';
+import user from '../../data/user.json';
+import statisticalData from '../../data/data';
+import friends from '../../data/friends';
+import transactions from '../../data/transactions';
 
 function App() {
   return (
@@ -16,9 +16,7 @@ function App() {
         tag={user.tag}
         location={user.location}
         avatar={user?.avatar}
-        followers={user?.stats?.followers}
-        views={user?.stats?.views}
-        likes={user?.stats?.likes}
+        stats={user?.stats}
       />
 
       <Statistic title="Upload stats" stats={statisticalData} />
